@@ -17,3 +17,12 @@ spec:
            image: nginx
            ports:
             -  containerPort: 80
+           volumeMounts:
+           -  mountPath: "mnt/storage"
+              name: my-volume
+      volumes:
+        -  name: my-volume
+           persistentVolumeClaim:
+            claimName: my-pvc
+           
+               
